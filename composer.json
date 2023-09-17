@@ -7,6 +7,9 @@
             "Azibom\\EasyRegex\\": "src/"
         }
     },
+    "require": {
+        "php": ">=7.2.5"
+    },
     "minimum-stability": "dev",
     "prefer-stable": true
 }
