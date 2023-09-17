@@ -2,6 +2,11 @@
 
 PHP Regular expressions made easy
 
+[![License](https://img.shields.io/github/license/azibom/easy-regex.svg)](https://github.com/azibom/easy-regex)
+[![Latest Stable Version](https://img.shields.io/packagist/v/azibom/easy-regex.svg)](https://packagist.org/packages/azibom/easy-regex)
+[![PHP version](https://img.shields.io/packagist/php-v/azibom/easy-regex.svg)](https://packagist.org/packages/azibom/easy-regex)
+[![Build Status](https://img.shields.io/github/stars/azibom/easy-regex.svg)](https://github.com/azibom/easy-regex)
+
 ### Prerequisites
 
 You need them before installing the package.
