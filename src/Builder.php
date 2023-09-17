@@ -1,6 +1,6 @@
 <?php
 
-namespace azibom\EasyRegex;
+namespace Azibom\EasyRegex;
  
 class Builder {
     private $source = '';
