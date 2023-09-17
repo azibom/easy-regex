@@ -8,8 +8,12 @@
         }
     },
     "require": {
-        "php": ">=7.2.5"
+        "php": ">=7.2.5",
+        "phpunit/phpunit": "^10.3"
     },
     "minimum-stability": "dev",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "require-dev": {
+        "php-coveralls/php-coveralls": "^2.6"
+    }
 }
