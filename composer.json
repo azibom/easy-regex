@@ -1,0 +1,11 @@
+{
+    "name": "azibom/easy-regex",
+    "description": "PHP Regular expressions made easy.",
+    "autoload": {
+        "psr-4": {
+            "Azibom\\EasyRegex\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
