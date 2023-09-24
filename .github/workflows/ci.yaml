@@ -11,4 +11,8 @@ jobs:
       - run: echo "The ${{ github.repository }} repository has been cloned to the runner."
       - uses: php-actions/composer@v6
       - run: echo "Composer dependencies have been installed"
-      - run: vendor/bin/phpunit tests
+      - run: vendor/bin/phpunit tests --coverage-clover ./coverage.xml
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v3
+        env:
+            CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
