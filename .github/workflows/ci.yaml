@@ -12,7 +12,10 @@ jobs:
  
       - name: Install composer and dependencies
         uses: php-actions/composer@v6
- 
+
+      - name: PHPStan Static Analysis
+        run: vendor/bin/phpstan analyse src tests
+
       - name: Check coding standards
         run: vendor/bin/phpcs src
 
