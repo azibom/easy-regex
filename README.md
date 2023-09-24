@@ -6,6 +6,7 @@ PHP Regular expressions made easy
 [![Latest Stable Version](https://img.shields.io/packagist/v/azibom/easy-regex.svg)](https://packagist.org/packages/azibom/easy-regex)
 [![PHP version](https://img.shields.io/packagist/php-v/azibom/easy-regex.svg)](https://packagist.org/packages/azibom/easy-regex)
 [![Build Status](https://img.shields.io/github/stars/azibom/easy-regex.svg)](https://github.com/azibom/easy-regex)
+[![codecov](https://codecov.io/gh/azibom/Easy-Regex/graph/badge.svg?token=qkGIZj4qp3)](https://codecov.io/gh/azibom/Easy-Regex)
 
 ### Prerequisites
 
