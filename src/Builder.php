@@ -1,126 +1,132 @@
-<?php
+<?php declare(strict_types = 1);
 
 namespace Azibom\EasyRegex;
 
+use function preg_match;
+use function preg_quote;
+
 class Builder
 {
-    private $source = '';
 
-    public function match($string)
-    {
-        return (bool) preg_match($this->getRegex(), $string);
-    }
+	/** @var string */
+	private $source = '';
 
-    public function getRegex()
-    {
-        return '/' . $this->source . '/';
-    }
+	public function match(string $string): bool
+	{
+		return (bool) preg_match($this->getRegex(), $string);
+	}
 
-    public function start()
-    {
-        $this->source .= '^';
+	public function getRegex(): string
+	{
+		return '/' . $this->source . '/';
+	}
 
-        return $this;
-    }
+	public function start(): self
+	{
+		$this->source .= '^';
 
-    public function end()
-    {
-        $this->source .= '$';
+		return $this;
+	}
 
-        return $this;
-    }
+	public function end(): self
+	{
+		$this->source .= '$';
 
-    public function any()
-    {
-        $this->source .= '.';
+		return $this;
+	}
 
-        return $this;
-    }
+	public function any(): self
+	{
+		$this->source .= '.';
 
-    public function digit()
-    {
-        $this->source .= '\d';
+		return $this;
+	}
 
-        return $this;
-    }
+	public function digit(): self
+	{
+		$this->source .= '\d';
 
-    public function word()
-    {
-        $this->source .= '\w';
+		return $this;
+	}
 
-        return $this;
-    }
+	public function word(): self
+	{
+		$this->source .= '\w';
 
-    public function whitespace()
-    {
-        $this->source .= '\s';
+		return $this;
+	}
 
-        return $this;
-    }
+	public function whitespace(): self
+	{
+		$this->source .= '\s';
 
-    public function see($value)
-    {
-        $this->source .= '('.$this->cleanup($value).')';
+		return $this;
+	}
 
-        return $this;
-    }
+	public function see(string $value): self
+	{
+		$this->source .= '(' . $this->cleanup($value) . ')';
 
-    public function maybeSee($value)
-    {
-        $this->source .= '('.$this->cleanup($value).')?';
+		return $this;
+	}
 
-        return $this;
-    }
+	public function maybeSee(string $value): self
+	{
+		$this->source .= '(' . $this->cleanup($value) . ')?';
 
-    public function cleanup($string)
-    {
-        return preg_quote($string, '/');
-    }
+		return $this;
+	}
 
-    public function letter()
-    {
-        $this->source .= '([a-zA-Z])';
+	public function cleanup(string $string): string
+	{
+		return preg_quote($string, '/');
+	}
 
-        return $this;
-    }
+	public function letter(): self
+	{
+		$this->source .= '([a-zA-Z])';
 
-    public function something()
-    {
-        $this->source .= '(?:.+)';
+		return $this;
+	}
 
-        return $this;
-    }
+	public function something(): self
+	{
+		$this->source .= '(?:.+)';
 
-    public function multiple()
-    {
-        $this->source .= '*';
+		return $this;
+	}
 
-        return $this;
-    }
+	public function multiple(): self
+	{
+		$this->source .= '*';
 
-    public function oneOrMore()
-    {
-        $this->source .= '+';
+		return $this;
+	}
 
-        return $this;
-    }
+	public function oneOrMore(): self
+	{
+		$this->source .= '+';
 
-    public function zeroOrMore()
-    {
-        $this->source .= '*';
+		return $this;
+	}
 
-        return $this;
-    }
+	public function zeroOrMore(): self
+	{
+		$this->source .= '*';
 
-    public function optional()
-    {
-        $this->source .= '?';
+		return $this;
+	}
 
-        return $this;
-    }
+	public function optional(): self
+	{
+		$this->source .= '?';
 
-    public function group()
-    {
-        $this->source .= '(' . $this->source . ')';
-    }
+		return $this;
+	}
+
+	public function group(): void
+	{
+		$this->source .= '(' . $this->source . ')';
+	}
+
 }
