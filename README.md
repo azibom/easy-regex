@@ -1,4 +1,4 @@
-# Easy-Regex
+# easy-regex
 
 PHP Regular expressions made easy
 
