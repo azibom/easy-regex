@@ -13,6 +13,12 @@ jobs:
       - name: Install composer and dependencies
         uses: php-actions/composer@v6
  
+      - name: PHP Code Style (phpcs)
+        uses: chindit/actions-phpcs@master
+        with:
+          # Folder to check code style
+          dir: src/
+
       - name: PHPUnit Tests
         uses: php-actions/phpunit@v3
         env:
