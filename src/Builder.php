@@ -1,71 +1,84 @@
 <?php
 
 namespace Azibom\EasyRegex;
- 
-class Builder {
+
+class Builder
+{
     private $source = '';
 
-    public function match($string) {
+    public function match($string)
+    {
         return (bool) preg_match($this->getRegex(), $string);
     }
 
-    public function getRegex() {
+    public function getRegex()
+    {
         return '/' . $this->source . '/';
     }
 
-    public function start() {
+    public function start()
+    {
         $this->source .= '^';
-        
+
         return $this;
     }
 
-    public function end() {
+    public function end()
+    {
         $this->source .= '$';
-        
+
         return $this;
     }
 
-    public function any() {
+    public function any()
+    {
         $this->source .= '.';
-        
+
         return $this;
     }
 
-    public function digit() {
+    public function digit()
+    {
         $this->source .= '\d';
-        
+
         return $this;
     }
 
-    public function word() {
+    public function word()
+    {
         $this->source .= '\w';
-        
+
         return $this;
     }
 
-    public function whitespace() {
+    public function whitespace()
+    {
         $this->source .= '\s';
-        
+
         return $this;
     }
 
-    public function see($value) {
+    public function see($value)
+    {
         $this->source .= '('.$this->cleanup($value).')';
-        
+
         return $this;
     }
 
-    public function maybeSee($value) {
+    public function maybeSee($value)
+    {
         $this->source .= '('.$this->cleanup($value).')?';
-        
+
         return $this;
     }
 
-    public function cleanup($string) {
+    public function cleanup($string)
+    {
         return preg_quote($string, '/');
     }
 
-    public function letter() {
+    public function letter()
+    {
         $this->source .= '([a-zA-Z])';
 
         return $this;
@@ -78,31 +91,36 @@ class Builder {
         return $this;
     }
 
-    public function multiple() {
+    public function multiple()
+    {
         $this->source .= '*';
 
         return $this;
     }
 
-    public function oneOrMore() {
+    public function oneOrMore()
+    {
         $this->source .= '+';
 
         return $this;
     }
 
-    public function zeroOrMore() {
+    public function zeroOrMore()
+    {
         $this->source .= '*';
 
         return $this;
     }
 
-    public function optional() {
+    public function optional()
+    {
         $this->source .= '?';
 
         return $this;
     }
 
-    public function group() {
+    public function group()
+    {
         $this->source .= '(' . $this->source . ')';
     }
 }
