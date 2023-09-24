@@ -14,4 +14,15 @@ class BuilderTest extends TestCase {
 
         $this->assertTrue($builder->match("http"));
     }
+
+    public function testDigitOperation()
+    {
+        $builder = new Builder();
+        $builder
+            ->start()
+            ->digit()
+            ->end();
+
+        $this->assertTrue($builder->match("1"));
+    }
 }
