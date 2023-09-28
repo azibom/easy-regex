@@ -53,3 +53,9 @@ if ($builder->match("https://google.com")) {
 // /^(http)(s)?(\:\/\/)(?:.+)(\.)(?:.+)$/
 // Match found!
 ```
+
+## Roadmap
+The goal of this project is to make a complete regex helper library for the PHP language.
+
+## Contribution
+Any contribution in the form of an issue or a pull request is more than welcome! Also if you have any questions, feel free to create a new issue or comment on existing ones.
